@@ -4,4 +4,6 @@ function computerPlay(){
     return arrRockScissorPaper[randomPCSelector];
 }
 
-console.log(computerPlay())
+let userInput = prompt("Enter Rock, Scissors or Paper","");
+
+console.log(userInput);
