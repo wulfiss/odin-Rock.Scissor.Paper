@@ -1,9 +1,31 @@
 function computerPlay(){
-    arrRockScissorPaper = ["Rock", "Scissors", "Paper", "Rock", "Scissors", "Paper"];
+    arrRockScissorPaper = ["rock", "scissors", "paper", "rock", "scissors", "paper"];
     randomPCSelector = Math.floor(Math.random() * 6);
     return arrRockScissorPaper[randomPCSelector];
 }
 
-let userInput = prompt("Enter Rock, Scissors or Paper","");
+function gamePlay(playerSelection, computerSelection){
+    let result;
+    if (playerSelection == computerSelection){
+        result = "It's a tie.";
+    } else if(playerSelection == "rock" && computerSelection == "scissors"){
+        result = "You win.";
+    } else if(playerSelection == "scissors" && computerSelection == "paper"){
+        result = "You win.";
+    } else if(playerSelection == "paper" && computerSelection == "rock"){
+        result = "You win.";
+    } else if(computerSelection == "rock" && playerSelection == "scissors"){
+        result = "You lose.";
+    } else if(computerSelection == "scissors" && playerSelection == "paper"){
+        result = "You lose.";
+    } else if(computerSelection == "paper" && playerSelection == "rock"){
+        result = "You lose.";
+    }
 
-console.log(userInput);
+    return result;
+}
+
+let userInput = prompt("Enter Rock, Scissors or Paper","");
+let computerInput = computerPlay();
+
+console.log(gamePlay(userInput, computerInput));
