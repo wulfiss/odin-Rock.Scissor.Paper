@@ -6,6 +6,7 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
     let result;
+
     if (playerSelection == computerSelection){
         result = "It's a tie.";
     } else if(playerSelection == "rock" && computerSelection == "scissors"){
@@ -25,8 +26,14 @@ function playRound(playerSelection, computerSelection){
     return result;
 }
 
-let userInput = prompt("Enter Rock, Scissors or Paper","");
-let userInputLowCase = userInput.toLowerCase();
-let computerInput = computerPlay();
+function game(){
+    for (let i = 0; i < 5; i++){
+        let userInput = prompt("Enter Rock, Scissors or Paper","");
+        let userInputLowCase = userInput.toLowerCase();
+        let computerInput = computerPlay();
+        console.log(playRound(userInputLowCase, computerInput));
 
-console.log(playRound(userInputLowCase, computerInput));
+    }
+}
+
+game();
