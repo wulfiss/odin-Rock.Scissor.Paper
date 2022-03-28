@@ -26,6 +26,7 @@ function gamePlay(playerSelection, computerSelection){
 }
 
 let userInput = prompt("Enter Rock, Scissors or Paper","");
+let userInputLowCase = userInput.toLowerCase();
 let computerInput = computerPlay();
 
-console.log(gamePlay(userInput, computerInput));
+console.log(gamePlay(userInputLowCase, computerInput));
