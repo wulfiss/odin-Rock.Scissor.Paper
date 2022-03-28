@@ -60,15 +60,27 @@ function reMatch(){
     }
 }
 
+function userInputFunc(){
+    let userInputF = prompt("Enter Rock, Scissors or Paper","");
+    let userInputLow = userInputF.toLowerCase();
+
+    if (userInputLow == "rock" || userInputLow == "scissors" || userInputLow == "paper"){
+        return userInputLow;
+    }else{
+        console.log(`You have typed ${userInputF} and that is not and option, try again.`);
+        return userInputFunc();
+    }
+}
+
+
 let pcScore = 0;
 let userScore = 0;
 
 function game(){
        for (let i = 0; i < 5; i++){ 
-        let userInput = prompt("Enter Rock, Scissors or Paper","");
-        let userInputLowCase = userInput.toLowerCase();
+        let userInput = userInputFunc();    
         let computerInput = computerPlay();
-        console.log(playRound(userInputLowCase, computerInput));
+        console.log(playRound(userInput, computerInput));
       }
 
       console.log(finalScore(pcScore, userScore));
