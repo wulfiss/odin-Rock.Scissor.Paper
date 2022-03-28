@@ -31,6 +31,31 @@ function playRound(playerSelection, computerSelection){
 
     return result;
 }
+function finalScore (pcScoreF, userScoreF){
+    let finalMessage;
+    if(userScoreF > pcScoreF){
+        return finalMessage = `You won! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    }else if(userScoreF < pcScoreF){
+        return finalMessage = `You lost! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    }else if(userScoreF = pcScoreF){
+        return finalMessage = `You tied with the PC! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    }
+
+}
+
+function reMatch(){
+    let userInputRematch = prompt("Do want a rematch? (Yes or No)","");
+    let userInputRematchLow = userInputRematch;
+    if (userInputRematchLow == "yes"){
+        pcScore = 0;
+        userScore = 0;
+        console.clear();
+        game();
+    } else if(userInputRematchLow == "no"){
+        console.clear();
+        console.log("Sayounara");
+    }
+}
 
 let pcScore = 0;
 let userScore = 0;
@@ -43,7 +68,8 @@ function game(){
         console.log(playRound(userInputLowCase, computerInput));
       }
 
-      console.log(`Your score is ${userScore} and the PC score is ${pcScore}`);
+      console.log(finalScore(pcScore, userScore));
+      reMatch();
 }
 
 game();
