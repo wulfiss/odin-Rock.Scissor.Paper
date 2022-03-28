@@ -54,6 +54,9 @@ function reMatch(){
     } else if(userInputRematchLow == "no"){
         console.clear();
         console.log("Sayounara");
+    } else{
+        console.log("That's not a YES or NO, try again");
+        reMatch();
     }
 }
 
