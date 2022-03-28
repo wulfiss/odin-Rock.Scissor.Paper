@@ -4,7 +4,7 @@ function computerPlay(){
     return arrRockScissorPaper[randomPCSelector];
 }
 
-function gamePlay(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     let result;
     if (playerSelection == computerSelection){
         result = "It's a tie.";
@@ -29,4 +29,4 @@ let userInput = prompt("Enter Rock, Scissors or Paper","");
 let userInputLowCase = userInput.toLowerCase();
 let computerInput = computerPlay();
 
-console.log(gamePlay(userInputLowCase, computerInput));
+console.log(playRound(userInputLowCase, computerInput));
