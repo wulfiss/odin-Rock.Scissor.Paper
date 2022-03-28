@@ -9,17 +9,17 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection == computerSelection){
         result = "It's a tie.";
     } else if(playerSelection == "rock" && computerSelection == "scissors"){
-        result = "You win.";
+        result = "You win! Rock beats Scissors.";
     } else if(playerSelection == "scissors" && computerSelection == "paper"){
-        result = "You win.";
+        result = "You win! Scissors beats Paper.";
     } else if(playerSelection == "paper" && computerSelection == "rock"){
-        result = "You win.";
+        result = "You win! Paper beats Rock.";
     } else if(computerSelection == "rock" && playerSelection == "scissors"){
-        result = "You lose.";
+        result = "You lose! Rock beats Scissors.";
     } else if(computerSelection == "scissors" && playerSelection == "paper"){
-        result = "You lose.";
+        result = "You lose! Scissors beats Paper.";
     } else if(computerSelection == "paper" && playerSelection == "rock"){
-        result = "You lose.";
+        result = "You lose! Paper beats Rock.";
     }
 
     return result;
