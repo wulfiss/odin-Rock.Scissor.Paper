@@ -59,9 +59,12 @@ function reMatch(){
         reMatch();
     }
 }
-
+/*
 function userInputFunc(){
     let userInputF = prompt("Enter Rock, Scissors or Paper","");
+    if (userInputF == null){
+        return false;
+    }
     let userInputLow = userInputF.toLowerCase();
 
     if (userInputLow == "rock" || userInputLow == "scissors" || userInputLow == "paper"){
@@ -71,7 +74,10 @@ function userInputFunc(){
         return userInputFunc();
     }
 }
-
+*/
+function userInputbuttons(){
+    
+}
 
 let pcScore = 0;
 let userScore = 0;
