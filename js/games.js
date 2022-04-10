@@ -75,22 +75,41 @@ function userInputFunc(){
     }
 }
 */
-function userInputbuttons(){
+function userInputButtons(){
+    let $rock = document.querySelector('#rock');
+    let $paper = document.querySelector('#paper');
+    let $scissors = document.querySelector('#scissors');
     
-}
 
+    $rock.addEventListener('click', () =>{
+        userInputButton = "rock";
+        game();
+    });
+
+    $paper.addEventListener('click', () => {
+        userInputButton = 'paper';
+        game();
+    });
+
+    $scissors.addEventListener('click', () => {
+        userInputButton = 'scissors';
+        game();
+    });
+
+}
+let userInputButton = "";
 let pcScore = 0;
 let userScore = 0;
 
 function game(){
        for (let i = 0; i < 5; i++){ 
-        let userInput = userInputFunc();    
+        let userInput = userInputButton;    
         let computerInput = computerPlay();
         console.log(playRound(userInput, computerInput));
       }
-
+      userInputButtons()
       console.log(finalScore(pcScore, userScore));
       reMatch();
 }
 
-game();
+userInputButtons()
