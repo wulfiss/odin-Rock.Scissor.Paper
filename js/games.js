@@ -76,24 +76,21 @@ function userInputFunc(){
 }
 */
 function userInputButtons(){
-    let $rock = document.querySelector('#rock');
-    let $paper = document.querySelector('#paper');
-    let $scissors = document.querySelector('#scissors');
+    const $rock = document.querySelector('#rock');
+    const $paper = document.querySelector('#paper');
+    const $scissors = document.querySelector('#scissors');
     
 
-    $rock.addEventListener('click', () =>{
-        userInputButton = "rock";
-        game();
+    $rock.addEventListener('click', () => {
+        game("rock", computerPlay());
     });
 
     $paper.addEventListener('click', () => {
-        userInputButton = 'paper';
-        game();
+        game("paper", computerPlay());
     });
 
     $scissors.addEventListener('click', () => {
-        userInputButton = 'scissors';
-        game();
+        game("scissors", computerPlay());
     });
 
 }
@@ -101,15 +98,14 @@ let userInputButton = "";
 let pcScore = 0;
 let userScore = 0;
 
-function game(){
-       for (let i = 0; i < 5; i++){ 
-        let userInput = userInputButton;    
-        let computerInput = computerPlay();
+function game(userInput, computerInput){
+       //for (let i = 0; i < 5; i++){ 
+        //let userInput = userInputButton;    
+        //let computerInput = computerPlay();
         console.log(playRound(userInput, computerInput));
-      }
-      userInputButtons()
+      //}
       console.log(finalScore(pcScore, userScore));
-      reMatch();
+      //reMatch();
 }
 
-userInputButtons()
+userInputButtons();
