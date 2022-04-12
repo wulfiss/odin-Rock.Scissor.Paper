@@ -80,12 +80,17 @@ function userInputButtons(){
     });
 
 }
-let userInputButton = "";
+
 let pcScore = 0;
 let userScore = 0;
 
 function game(){
 
+
+    userInputButtons();
+    
+    console.log(finalScore(pcScore, userScore));
+
 }
 
-userInputButtons();
+game();
