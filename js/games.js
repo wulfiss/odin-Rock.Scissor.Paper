@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection){
         pcScore++;
     }
 
-    return result;
+    return console.log(result);
 }
 function finalScore (pcScoreF, userScoreF){
     let finalMessage;
@@ -59,22 +59,8 @@ function reMatch(){
         reMatch();
     }
 }
-/*
-function userInputFunc(){
-    let userInputF = prompt("Enter Rock, Scissors or Paper","");
-    if (userInputF == null){
-        return false;
-    }
-    let userInputLow = userInputF.toLowerCase();
 
-    if (userInputLow == "rock" || userInputLow == "scissors" || userInputLow == "paper"){
-        return userInputLow;
-    }else{
-        console.log(`You have typed ${userInputF} and that is not and option, try again.`);
-        return userInputFunc();
-    }
-}
-*/
+
 function userInputButtons(){
     const $rock = document.querySelector('#rock');
     const $paper = document.querySelector('#paper');
@@ -82,15 +68,15 @@ function userInputButtons(){
     
 
     $rock.addEventListener('click', () => {
-        game("rock", computerPlay());
+        playRound("rock", computerPlay());
     });
 
     $paper.addEventListener('click', () => {
-        game("paper", computerPlay());
+        playRound("paper", computerPlay());
     });
 
     $scissors.addEventListener('click', () => {
-        game("scissors", computerPlay());
+        playRound("scissors", computerPlay());
     });
 
 }
@@ -98,14 +84,8 @@ let userInputButton = "";
 let pcScore = 0;
 let userScore = 0;
 
-function game(userInput, computerInput){
-       //for (let i = 0; i < 5; i++){ 
-        //let userInput = userInputButton;    
-        //let computerInput = computerPlay();
-        console.log(playRound(userInput, computerInput));
-      //}
-      console.log(finalScore(pcScore, userScore));
-      //reMatch();
+function game(){
+
 }
 
 userInputButtons();
