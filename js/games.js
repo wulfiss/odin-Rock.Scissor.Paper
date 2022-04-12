@@ -1,11 +1,11 @@
 function computerPlay(){
-    arrRockScissorPaper = ["rock", "scissors", "paper", "rock", "scissors", "paper"];
-    randomPCSelector = Math.floor((Math.random() * Math.random()) * arrRockScissorPaper.length);
+    arrRockScissorPaper = ["rock", "scissors", "paper"];
+    randomPCSelector = Math.floor(Math.random() * arrRockScissorPaper.length);
     return arrRockScissorPaper[randomPCSelector];
 }
 
 function playRound(playerSelection, computerSelection){
-    let result;
+    let result = '';
 
     if (playerSelection == computerSelection){
         result = "It's a tie.";
@@ -28,19 +28,19 @@ function playRound(playerSelection, computerSelection){
         result = "You lose! Paper beats Rock.";
         pcScore++;
     }
-
+    //return result;
     return console.log(result);
 }
 function finalScore (pcScoreF, userScoreF){
-    let finalMessage;
+    let finalMessage = '';
     if(userScoreF > pcScoreF){
-        return finalMessage = `You won! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+        finalMessage = `You won! your score is ${userScoreF} and PC score is ${pcScoreF}`;
     }else if(userScoreF < pcScoreF){
-        return finalMessage = `You lost! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-    }else if(userScoreF = pcScoreF){
-        return finalMessage = `You tied with the PC! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+        finalMessage = `You lost! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    }else if(userScoreF == pcScoreF){
+        finalMessage = `You tied with the PC! your score is ${userScoreF} and PC score is ${pcScoreF}`;
     }
-
+    return console.log(finalMessage);
 }
 
 function reMatch(){
@@ -69,14 +69,17 @@ function userInputButtons(){
 
     $rock.addEventListener('click', () => {
         playRound("rock", computerPlay());
+        finalScore(pcScore, userScore);
     });
 
     $paper.addEventListener('click', () => {
         playRound("paper", computerPlay());
+        finalScore(pcScore, userScore);
     });
 
     $scissors.addEventListener('click', () => {
         playRound("scissors", computerPlay());
+        finalScore(pcScore, userScore);
     });
 
 }
@@ -84,12 +87,13 @@ function userInputButtons(){
 let pcScore = 0;
 let userScore = 0;
 
+
 function game(){
 
 
     userInputButtons();
-    
-    console.log(finalScore(pcScore, userScore));
+
+    //console.log(finalScore(pcScore, userScore));
 
 }
 
