@@ -40,7 +40,7 @@ function finalScore (pcScoreF, userScoreF){
     }else if(userScoreF == pcScoreF){
         finalMessage = `You tied with the PC! your score is ${userScoreF} and PC score is ${pcScoreF}`;
     }
-    return console.log(finalMessage);
+    return finalMessage;
 }
 
 function reMatch(){
@@ -65,21 +65,18 @@ function userInputButtons(){
     const $rock = document.querySelector('#rock');
     const $paper = document.querySelector('#paper');
     const $scissors = document.querySelector('#scissors');
+    let i = 0;
     
-
     $rock.addEventListener('click', () => {
         playRound("rock", computerPlay());
-        finalScore(pcScore, userScore);
     });
 
     $paper.addEventListener('click', () => {
         playRound("paper", computerPlay());
-        finalScore(pcScore, userScore);
     });
 
     $scissors.addEventListener('click', () => {
         playRound("scissors", computerPlay());
-        finalScore(pcScore, userScore);
     });
 
 }
@@ -90,11 +87,10 @@ let userScore = 0;
 
 function game(){
 
-
+    
     userInputButtons();
-
-    //console.log(finalScore(pcScore, userScore));
-
+    let finalResult = document.querySelector('#finalResult');
+    finalResult.textContent = finalScore(pcScore, userScore);
 }
 
 game();
