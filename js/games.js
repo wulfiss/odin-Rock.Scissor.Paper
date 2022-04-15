@@ -35,13 +35,16 @@ function playRound(playerSelection, computerSelection){
 function finalScore (pcScoreF, userScoreF){
     let finalMessage = '';
     let userGame = document.querySelector('#userGame');
+    let afterGame = document.querySelector('#afterGame');
     
     if(userScoreF == 5){
         finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
         userGame.hidden = true;
+        afterGame.hidden = false;
     }else if(pcScoreF == 5){
         finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
         userGame.hidden = true;
+        afterGame.hidden = false;
     }else{
         finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
     }
