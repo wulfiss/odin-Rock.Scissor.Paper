@@ -41,10 +41,12 @@ function finalScore (pcScoreF, userScoreF){
         finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
         userGame.hidden = true;
         afterGame.hidden = false;
+        reMatch();
     }else if(pcScoreF == 5){
         finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
         userGame.hidden = true;
         afterGame.hidden = false;
+        reMatch();
     }else{
         finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
     }
@@ -52,20 +54,14 @@ function finalScore (pcScoreF, userScoreF){
 }
 
 function reMatch(){
-    let userInputRematch = prompt("Do want a rematch? (Yes or No)","");
-    let userInputRematchLow = userInputRematch;
-    if (userInputRematchLow == "yes"){
+    const $rematchNo = document.querySelector('#rematchButtonNo');
+    const $rematchYes = document.querySelector('#rematchButtonYes');
+
+    $rematchYes.addEventListener('click', () => {
         pcScore = 0;
         userScore = 0;
-        console.clear();
         game();
-    } else if(userInputRematchLow == "no"){
-        console.clear();
-        console.log("Sayounara");
-    } else{
-        console.log("That's not a YES or NO, try again");
-        reMatch();
-    }
+    });
 }
 
 
