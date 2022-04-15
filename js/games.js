@@ -31,14 +31,15 @@ function playRound(playerSelection, computerSelection){
     
     return result;
 }
+
 function finalScore (pcScoreF, userScoreF){
     let finalMessage = '';
-    if(userScoreF > pcScoreF){
-        finalMessage = `You won! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-    }else if(userScoreF < pcScoreF){
-        finalMessage = `You lost! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-    }else if(userScoreF == pcScoreF){
-        finalMessage = `You tied with the PC! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    if(userScoreF == 5){
+        finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    }else if(userScoreF == 5){
+        finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
+    }else{
+        finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
     }
     return finalMessage;
 }
@@ -87,16 +88,11 @@ function userInputButtons(){
 
 }
 
+function game(){
+    userInputButtons();
+}
+
 let pcScore = 0;
 let userScore = 0;
-
-
-function game(){
-
-    
-    userInputButtons();
-    //let finalResult = document.querySelector('#finalResult');
-    //finalResult.textContent = finalScore(pcScore, userScore);
-}
 
 game();
