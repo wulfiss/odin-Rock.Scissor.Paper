@@ -36,7 +36,7 @@ function finalScore (pcScoreF, userScoreF){
     let finalMessage = '';
     if(userScoreF == 5){
         finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-    }else if(userScoreF == 5){
+    }else if(pcScoreF == 5){
         finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
     }else{
         finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
