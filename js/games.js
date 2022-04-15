@@ -28,8 +28,8 @@ function playRound(playerSelection, computerSelection){
         result = "You lose! Paper beats Rock.";
         pcScore++;
     }
-    //return result;
-    return console.log(result);
+    
+    return result;
 }
 function finalScore (pcScoreF, userScoreF){
     let finalMessage = '';
@@ -65,18 +65,24 @@ function userInputButtons(){
     const $rock = document.querySelector('#rock');
     const $paper = document.querySelector('#paper');
     const $scissors = document.querySelector('#scissors');
+    let finalResult = document.querySelector('#finalResult');
+    let matchResult = document.querySelector('#matchResult');
+
     let i = 0;
     
     $rock.addEventListener('click', () => {
-        playRound("rock", computerPlay());
+        matchResult.textContent = playRound("rock", computerPlay());
+        finalResult.textContent = finalScore(pcScore, userScore);
     });
 
     $paper.addEventListener('click', () => {
-        playRound("paper", computerPlay());
+        matchResult.textContent = playRound("paper", computerPlay());
+        finalResult.textContent = finalScore(pcScore, userScore);
     });
 
     $scissors.addEventListener('click', () => {
-        playRound("scissors", computerPlay());
+        matchResult.textContent = playRound("scissors", computerPlay());
+        finalResult.textContent = finalScore(pcScore, userScore);
     });
 
 }
@@ -89,8 +95,8 @@ function game(){
 
     
     userInputButtons();
-    let finalResult = document.querySelector('#finalResult');
-    finalResult.textContent = finalScore(pcScore, userScore);
+    //let finalResult = document.querySelector('#finalResult');
+    //finalResult.textContent = finalScore(pcScore, userScore);
 }
 
 game();
