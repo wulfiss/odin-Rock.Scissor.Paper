@@ -40,11 +40,13 @@ function finalScore (pcScoreF, userScoreF){
         userGame.hidden = true;
         afterGame.hidden = false;
         reMatch();
+        userScoreF = 0;
     }else if(pcScoreF == 5){
         finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
         userGame.hidden = true;
         afterGame.hidden = false;
         reMatch();
+        pcScoreF = 0;
     }else{
         finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
     }
@@ -56,13 +58,14 @@ function reMatch(){
     const $rematchYes = document.querySelector('#rematchButtonYes');
 
     $rematchYes.addEventListener('click', () => {
-        userGame.hidden = false;
+        /*userGame.hidden = false;
         afterGame.hidden = true;
         finalResult.textContent = '';
         matchResult.textContent = '';
-        pcScore = 0;
-        userScore = 0;
+
         game();
+        */
+       location.reload();
     });
 }
 
@@ -91,8 +94,6 @@ function userInputButtons(){
 }
 
 function game(){
-    pcScore = 0;
-    userScore = 0;
     userInputButtons();
 }
 
