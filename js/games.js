@@ -33,9 +33,7 @@ function playRound(playerSelection, computerSelection){
 }
 
 function finalScore (pcScoreF, userScoreF){
-    let finalMessage = '';
-    let userGame = document.querySelector('#userGame');
-    let afterGame = document.querySelector('#afterGame');
+
     
     if(userScoreF == 5){
         finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
@@ -58,6 +56,10 @@ function reMatch(){
     const $rematchYes = document.querySelector('#rematchButtonYes');
 
     $rematchYes.addEventListener('click', () => {
+        userGame.hidden = false;
+        afterGame.hidden = true;
+        finalResult.textContent = '';
+        matchResult.textContent = '';
         pcScore = 0;
         userScore = 0;
         game();
@@ -69,11 +71,8 @@ function userInputButtons(){
     const $rock = document.querySelector('#rock');
     const $paper = document.querySelector('#paper');
     const $scissors = document.querySelector('#scissors');
-    let finalResult = document.querySelector('#finalResult');
-    let matchResult = document.querySelector('#matchResult');
 
-    let i = 0;
-    
+
     $rock.addEventListener('click', () => {
         matchResult.textContent = playRound("rock", computerPlay());
         finalResult.textContent = finalScore(pcScore, userScore);
@@ -92,10 +91,17 @@ function userInputButtons(){
 }
 
 function game(){
+    pcScore = 0;
+    userScore = 0;
     userInputButtons();
 }
 
 let pcScore = 0;
 let userScore = 0;
+let finalResult = document.querySelector('#finalResult');
+let matchResult = document.querySelector('#matchResult');
+let finalMessage = '';
+let userGame = document.querySelector('#userGame');
+let afterGame = document.querySelector('#afterGame');
 
 game();
