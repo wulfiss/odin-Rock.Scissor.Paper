@@ -1,7 +1,19 @@
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+#userGame{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
 .imgUserInput{
     width: 100px;
+    height: 100px;
 }
 
 .imgUserInput:hover{
-    width: 110px;
+    transform: scale(1.2);
 }
