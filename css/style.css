@@ -33,8 +33,11 @@ div{
 }
 
 #blankSelection{
+    display: flex;
     border-radius: 50%;
     background-color:cadetblue;
-    width: 100px;
-    height: 100px;;
+    width: 93px;
+    height: 93px;;
+    justify-content: center;
+    align-items: center;
 }
