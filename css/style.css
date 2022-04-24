@@ -49,3 +49,9 @@ div{
 #pcSelection{
     width: 100px;
 }
+
+#matchResult{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

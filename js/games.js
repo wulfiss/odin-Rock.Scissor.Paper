@@ -29,7 +29,7 @@ function playRound(playerSelection, computerSelection){
         result = "You lose! Paper beats Rock.";
         pcScore++;
     }
-    return result;
+    //return result;
 }
 
 function changePcImg(pcSelection){
@@ -69,7 +69,9 @@ function finalScore (pcScoreF, userScoreF){
         reMatch();
         pcScoreF = 0;
     }else{
-        finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
+        //finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
+        userPoints.textContent = userScoreF;
+        pcPoints.textContent = pcScoreF;
     }
     return finalMessage;
 }
@@ -111,8 +113,10 @@ function game(){
 
 let pcScore = 0;
 let userScore = 0;
-let finalResult = document.querySelector('#finalResult');
-let matchResult = document.querySelector('#matchResult');
+//let finalResult = document.querySelector('#finalResult');
+let userPoints = document.querySelector('#userPoints');
+let pcPoints = document.querySelector('#PCpoints');
+//let matchResult = document.querySelector('#matchResult');
 let finalMessage = '';
 let userGame = document.querySelector('#gamePlay');
 let afterGame = document.querySelector('#afterGame');
