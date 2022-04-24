@@ -1,13 +1,19 @@
 body{
     display: flex;
     flex-direction: column;
+    border: 2px solid black;
 }
 
-#userGame{
+div{
+    border: 1px solid red;
+}
+
+#gamePlay{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 200px;
+    height: 500px;
 }
 .imgUserInput{
     width: 100px;
@@ -16,4 +22,11 @@ body{
 
 .imgUserInput:hover{
     transform: scale(1.2);
+}
+
+#blanSelection{
+    border-radius: 50%;
+    background-color:cadetblue;
+    width: 100px;
+    height: 100px;;
 }
