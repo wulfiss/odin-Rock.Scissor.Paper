@@ -2,15 +2,16 @@
     <html lang="eng">
         <head>
             <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Rock Scissor and Paper</title>
+            <title>Rock, Scissor and Paper</title>
             <script defer src="./js/games.js"></script>
+            <link rel="stylesheet" href="./css/style.css">
         </head>
 
         <body>
             <div id="userGame">
-                <button class="userInput" id="rock">Rock</button>
-                <button class="userInput" id="scissors">Scissors</button>
-                <button class="userInput" id="paper">Paper</button>
+                <img class="imgUserInput" id="paper" src="./img/paper.png">
+                <img class="imgUserInput" id="rock" src="./img/rock.png">
+                <img class="imgUserInput" id="scissors" src="./img/scissors.png">
                 <br>
                 <div id="matchResult"></div>
             </div>
@@ -20,7 +21,6 @@
             <div id="afterGame" hidden>
                 <p>Would you like a rematch?</p>
                 <button class="userInput" id="rematchButtonYes">YES!</button>
-                <button class="userInput" id="rematchButtonNo">NO!</button>
             </div>    
         </body>
     </html>

@@ -1,0 +1,7 @@
+.imgUserInput{
+    width: 100px;
+}
+
+.imgUserInput:hover{
+    width: 110px;
+}

@@ -1,5 +1,5 @@
 function computerPlay(){
-    arrRockScissorPaper = ["rock", "scissors", "paper"];
+    arrRockScissorPaper = ["rock", "scissors", "paper", "scissors", "rock", "paper", "rock", "paper", "paper"];
     randomPCSelector = Math.floor(Math.random() * arrRockScissorPaper.length);
     return arrRockScissorPaper[randomPCSelector];
 }
@@ -28,13 +28,10 @@ function playRound(playerSelection, computerSelection){
         result = "You lose! Paper beats Rock.";
         pcScore++;
     }
-    
     return result;
 }
 
 function finalScore (pcScoreF, userScoreF){
-
-    
     if(userScoreF == 5){
         finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
         userGame.hidden = true;
@@ -54,17 +51,8 @@ function finalScore (pcScoreF, userScoreF){
 }
 
 function reMatch(){
-    const $rematchNo = document.querySelector('#rematchButtonNo');
     const $rematchYes = document.querySelector('#rematchButtonYes');
-
     $rematchYes.addEventListener('click', () => {
-        /*userGame.hidden = false;
-        afterGame.hidden = true;
-        finalResult.textContent = '';
-        matchResult.textContent = '';
-
-        game();
-        */
        location.reload();
     });
 }
