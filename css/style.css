@@ -10,11 +10,19 @@ div{
 
 #gamePlay{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: 500px;
 }
+
+#userSelection, #pcSelection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 500px;
+}
+
 .imgUserInput{
     width: 100px;
     height: 100px;
@@ -24,7 +32,7 @@ div{
     transform: scale(1.2);
 }
 
-#blanSelection{
+#blankSelection{
     border-radius: 50%;
     background-color:cadetblue;
     width: 100px;
