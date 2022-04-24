@@ -35,9 +35,17 @@ div{
 #blankSelection{
     display: flex;
     border-radius: 50%;
-    background-color:cadetblue;
+    background-color:ghostwhite;
     width: 93px;
     height: 93px;;
     justify-content: center;
     align-items: center;
+}
+
+#pcImage{
+    display: none;
+}
+
+#pcSelection{
+    width: 100px;
 }

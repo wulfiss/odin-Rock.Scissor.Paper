@@ -6,6 +6,7 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
     let result = '';
+    changePcImg(computerSelection);
 
     if (playerSelection == computerSelection){
         result = "It's a tie.";
@@ -29,6 +30,29 @@ function playRound(playerSelection, computerSelection){
         pcScore++;
     }
     return result;
+}
+
+function changePcImg(pcSelection){
+    let blankPCVisor = document.querySelector('#blankSelection');
+    let pcImage = document.querySelector('#pcImage');
+    
+    switch(pcSelection){
+        case 'rock':
+            blankPCVisor.style.display ='none';
+            pcImage.style.display='flex';
+            pcImage.src = './img/rock.png'
+            break;
+        case 'paper':
+            blankPCVisor.style.display ='none';
+            pcImage.style.display='flex';
+            pcImage.src = './img/paper.png'
+            break;
+        default:
+            blankPCVisor.style.display ='none';
+            pcImage.style.display='flex';
+            pcImage.src = './img/scissors.png'
+            break;
+    }
 }
 
 function finalScore (pcScoreF, userScoreF){
@@ -90,7 +114,7 @@ let userScore = 0;
 let finalResult = document.querySelector('#finalResult');
 let matchResult = document.querySelector('#matchResult');
 let finalMessage = '';
-let userGame = document.querySelector('#userGame');
+let userGame = document.querySelector('#gamePlay');
 let afterGame = document.querySelector('#afterGame');
 
 game();
