@@ -1,6 +1,7 @@
 function computerPlay(){
-    arrRockScissorPaper = ["rock", "scissors", "paper", "scissors", "rock", "paper", "rock", "paper", "paper"];
-    randomPCSelector = Math.floor(Math.random() * arrRockScissorPaper.length);
+    arrRockScissorPaper = ["rock", "scissors", "paper","rock", "scissors", "paper","rock", "scissors", "paper","rock", "scissors", "paper",];
+    //randomPCSelector = Math.floor(Math.random() * arrRockScissorPaper.length);
+    randomPCSelector = rando(0 , arrRockScissorPaper.length - 1);
     return arrRockScissorPaper[randomPCSelector];
 }
 
