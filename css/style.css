@@ -9,8 +9,15 @@ div{
     border: 1px solid red;
 }
 
-#gamePlay{
+.bodyOfBody{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 550px;
+}
+
+#gamePlay{
+    display: none;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -52,16 +59,40 @@ div{
 }
 
 #matchResult{
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: space-around;
 }
 
 #afterGame{
     display: flex;
+    flex-direction: column;
+    height: 550px;
+    justify-content: center;
+}
+
+.matchResult.afterGame, .userPc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 40px;
+}
+
+#rematchButtonYes{
+    margin: 50px 40px;
 }
 
 .footer, .header, #gamePlay, #afterGame, #matchResult{
     max-width: 500px;
     min-width: 400px;
 }
+
+.footer, .header{
+    text-align: center;
+}
+
+.msgFinal{
+    text-align: center;
+    margin: 20px 40px;
+}
+

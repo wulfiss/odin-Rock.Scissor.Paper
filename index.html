@@ -12,29 +12,39 @@
             <div class="header">
                 <h2>Rock, Scissors and Paper</h2>
             </div>
-            <div id="gamePlay">
-                <div id="userSelection">
-                    <img class="imgUserInput" id="paper" src="./img/paper.png">
-                    <img class="imgUserInput" id="rock" src="./img/rock.png">
-                    <img class="imgUserInput" id="scissors" src="./img/scissors.png">
-                </div>
-                <div id="vs">VS</div>
-                <div id="pcSelection">
-                    <div id="blankSelection">
-                        <p>PC Selection</p>
+            <div class="bodyOfBody">
+                <div id="gamePlay">
+                    <div id="userSelection">
+                        <img class="imgUserInput" id="paper" src="./img/paper.png">
+                        <img class="imgUserInput" id="rock" src="./img/rock.png">
+                        <img class="imgUserInput" id="scissors" src="./img/scissors.png">
                     </div>
-                    <img class="imgUserInput" id="pcImage">
+                    <div id="vs">VS</div>
+                    <div id="pcSelection">
+                        <div id="blankSelection">
+                            <p>PC Selection</p>
+                        </div>
+                        <img class="imgUserInput" id="pcImage">
+                    </div>
                 </div>
-            </div>
 
-            <div id="matchResult">
-                <div id="userPoints">0</div>
-                <div id="PCpoints">0</div>
-            </div>
+                <div id="matchResult">
+                    <div id="userPoints">0</div>
+                    <div id="PCpoints">0</div>
+                </div>
 
-            <div id="afterGame" hidden>
-                <p>Would you like a rematch?</p>
-                <button class="userInput" id="rematchButtonYes">YES!</button>
+                <div id="afterGame">
+                    <div class="userPc">
+                        <div>User</div>
+                        <div>PC</div>
+                    </div>
+                    <div class="matchResult afterGame">
+                        <div id="userPoints">0</div>
+                        <div id="PCpoints">0</div>
+                    </div>
+                    <div class="msgFinal">PC OR USER WIN</div>
+                    <button class="userInput" id="rematchButtonYes">Play again?</button>
+                </div>
             </div>
             <div class="footer"><h3>By me, <a href="https://github.com/wulfiss" target="_blank">Wulfis!</h3></div>  
         </body>

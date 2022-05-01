@@ -6,7 +6,6 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection){
-    let result = '';
     let user = 0;
     let pc = 0;
     changePcImg(computerSelection);
@@ -52,11 +51,11 @@ function changePcImg(pcSelection){
     }
 }
 
-
 function reMatch(){
     const $rematchYes = document.querySelector('#rematchButtonYes');
     afterGame.style.display = "flex"
     userGame.style.display = "none";
+    matchResult.style.display = "none";
 
     $rematchYes.addEventListener('click', () => {
        location.reload();
@@ -119,6 +118,7 @@ let userPoints = document.querySelector('#userPoints');
 let pcPoints = document.querySelector('#PCpoints');
 let userGame = document.querySelector('#gamePlay');
 let afterGame = document.querySelector('#afterGame');
+let matchResult = document.querySelector('#matchResult');
 
 
 
