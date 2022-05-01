@@ -1,6 +1,7 @@
 body{
     display: flex;
     flex-direction: column;
+    align-items: center;
     border: 2px solid black;
 }
 
@@ -58,4 +59,9 @@ div{
 
 #afterGame{
     display: flex;
+}
+
+.footer, .header, #gamePlay, #afterGame, #matchResult{
+    max-width: 500px;
+    min-width: 400px;
 }
