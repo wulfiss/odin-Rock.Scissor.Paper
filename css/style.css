@@ -55,3 +55,7 @@ div{
     flex-direction: row;
     justify-content: space-around;
 }
+
+#afterGame{
+    display: none;
+}

@@ -71,6 +71,9 @@ function finalScore (pcScoreF, userScoreF){
 
 function reMatch(){
     const $rematchYes = document.querySelector('#rematchButtonYes');
+    afterGame.style.display = "flex"
+    userGame.style.display = "none";
+
     $rematchYes.addEventListener('click', () => {
        location.reload();
     });
@@ -81,25 +84,45 @@ function userInputButtons(){
     const $rock = document.querySelector('#rock');
     const $paper = document.querySelector('#paper');
     const $scissors = document.querySelector('#scissors');
+    let playRoundVar = [];
     let userPointsFunction = 0;
     let PCPointsFunction = 0;
 
+    
+
     $rock.addEventListener('click', () => {
-        let playRoundVar = playRound("rock", computerPlay());
+        playRoundVar = playRound("rock", computerPlay());
         userPointsFunction += playRoundVar[0];
         PCPointsFunction += playRoundVar[1];
         userPoints.textContent = userPointsFunction;
         pcPoints.textContent = PCPointsFunction;
+        if( userPointsFunction == 5 || PCPointsFunction == 5){
+            reMatch();
+        }
     });
 
     $paper.addEventListener('click', () => {
-        matchResult.textContent = playRound("paper", computerPlay());
-        finalResult.textContent = finalScore(pcScore, userScore);
+        playRoundVar = playRound("paper", computerPlay());
+        userPointsFunction += playRoundVar[0];
+        PCPointsFunction += playRoundVar[1];
+        userPoints.textContent = userPointsFunction;
+        pcPoints.textContent = PCPointsFunction;
+
+        if( userPointsFunction == 5 || PCPointsFunction == 5){
+            reMatch();
+        }
+
     });
 
     $scissors.addEventListener('click', () => {
-        matchResult.textContent = playRound("scissors", computerPlay());
-        finalResult.textContent = finalScore(pcScore, userScore);
+        playRoundVar = playRound("scissors", computerPlay());
+        userPointsFunction += playRoundVar[0];
+        PCPointsFunction += playRoundVar[1];
+        userPoints.textContent = userPointsFunction;
+        pcPoints.textContent = PCPointsFunction;
+        if( userPointsFunction == 5 || PCPointsFunction == 5){
+            reMatch();
+        }
     });
 }
 
