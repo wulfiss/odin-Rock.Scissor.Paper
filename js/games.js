@@ -1,5 +1,5 @@
 function computerPlay(){
-    arrRockScissorPaper = ["rock", "scissors", "paper","rock", "scissors", "paper","rock", "scissors", "paper","rock", "scissors", "paper",];
+    arrRockScissorPaper = ["rock", "scissors", "paper"];
     //randomPCSelector = Math.floor(Math.random() * arrRockScissorPaper.length);
     randomPCSelector = rando(0 , arrRockScissorPaper.length - 1);
     return arrRockScissorPaper[randomPCSelector];
@@ -52,22 +52,6 @@ function changePcImg(pcSelection){
     }
 }
 
-function finalScore (pcScoreF, userScoreF){
-    if(userScoreF == 5){
-        finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-        reMatch();
-        userScoreF = 0;
-    }else if(pcScoreF == 5){
-        finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-        reMatch();
-        pcScoreF = 0;
-    }else{
-        //finalMessage = `Your points are ${userScoreF} and PC points are ${pcScoreF}`;
-        userPoints.textContent = userScoreF;
-        pcPoints.textContent = pcScoreF;
-    }
-    //return finalMessage;
-}
 
 function reMatch(){
     const $rematchYes = document.querySelector('#rematchButtonYes');

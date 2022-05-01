@@ -57,5 +57,5 @@ div{
 }
 
 #afterGame{
-    display: none;
+    display: flex;
 }
