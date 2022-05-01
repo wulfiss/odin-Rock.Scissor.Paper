@@ -7,30 +7,26 @@ function computerPlay(){
 
 function playRound(playerSelection, computerSelection){
     let result = '';
+    let user = 0;
+    let pc = 0;
     changePcImg(computerSelection);
 
     if (playerSelection == computerSelection){
-        result = "It's a tie.";
+        
     } else if(playerSelection == "rock" && computerSelection == "scissors"){
-        result = "You win! Rock beats Scissors.";
-        userScore++;
+        user++;
     } else if(playerSelection == "scissors" && computerSelection == "paper"){
-        result = "You win! Scissors beats Paper.";
-        userScore++;
+        user++;
     } else if(playerSelection == "paper" && computerSelection == "rock"){
-        result = "You win! Paper beats Rock.";
-        userScore++;
+        user++;
     } else if(computerSelection == "rock" && playerSelection == "scissors"){
-        result = "You lose! Rock beats Scissors.";
-        pcScore++;
+        pc++;
     } else if(computerSelection == "scissors" && playerSelection == "paper"){
-        result = "You lose! Scissors beats Paper.";
-        pcScore++;
+        pc++;
     } else if(computerSelection == "paper" && playerSelection == "rock"){
-        result = "You lose! Paper beats Rock.";
-        pcScore++;
+        pc++;
     }
-    //return result;
+    return [user, pc];
 }
 
 function changePcImg(pcSelection){
@@ -59,14 +55,10 @@ function changePcImg(pcSelection){
 function finalScore (pcScoreF, userScoreF){
     if(userScoreF == 5){
         finalMessage = `You win! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-        userGame.hidden = true;
-        afterGame.hidden = false;
         reMatch();
         userScoreF = 0;
     }else if(pcScoreF == 5){
         finalMessage = `You lose! your score is ${userScoreF} and PC score is ${pcScoreF}`;
-        userGame.hidden = true;
-        afterGame.hidden = false;
         reMatch();
         pcScoreF = 0;
     }else{
@@ -74,7 +66,7 @@ function finalScore (pcScoreF, userScoreF){
         userPoints.textContent = userScoreF;
         pcPoints.textContent = pcScoreF;
     }
-    return finalMessage;
+    //return finalMessage;
 }
 
 function reMatch(){
@@ -89,11 +81,15 @@ function userInputButtons(){
     const $rock = document.querySelector('#rock');
     const $paper = document.querySelector('#paper');
     const $scissors = document.querySelector('#scissors');
-
+    let userPointsFunction = 0;
+    let PCPointsFunction = 0;
 
     $rock.addEventListener('click', () => {
-        matchResult.textContent = playRound("rock", computerPlay());
-        finalResult.textContent = finalScore(pcScore, userScore);
+        let playRoundVar = playRound("rock", computerPlay());
+        userPointsFunction += playRoundVar[0];
+        PCPointsFunction += playRoundVar[1];
+        userPoints.textContent = userPointsFunction;
+        pcPoints.textContent = PCPointsFunction;
     });
 
     $paper.addEventListener('click', () => {
@@ -105,21 +101,18 @@ function userInputButtons(){
         matchResult.textContent = playRound("scissors", computerPlay());
         finalResult.textContent = finalScore(pcScore, userScore);
     });
-
 }
 
 function game(){
     userInputButtons();
 }
 
-let pcScore = 0;
-let userScore = 0;
-//let finalResult = document.querySelector('#finalResult');
+
 let userPoints = document.querySelector('#userPoints');
 let pcPoints = document.querySelector('#PCpoints');
-//let matchResult = document.querySelector('#matchResult');
-let finalMessage = '';
 let userGame = document.querySelector('#gamePlay');
 let afterGame = document.querySelector('#afterGame');
+
+
 
 game();
