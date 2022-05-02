@@ -1,22 +1,31 @@
 *{
     font-family:'Shadows Into Light', cursive;
 }
+
+html{
+    height: 100%;
+}
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid black;
-}
-
-div{
-    border: 1px solid red;
+    border: 1px solid black;
+    background-color: #c0bfe0;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
 }
 
 .bodyOfBody{
+    align-self: stretch;
+    justify-self: stretch;
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
-    height: 550px;
+    min-height: 500px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #gamePlay{
@@ -24,14 +33,15 @@ div{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 500px;
+    min-height: 500px;
+    flex-grow: 4;
 }
 
 #userSelection, #pcSelection{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 500px;
+    min-height: 500px;
 }
 
 .imgUserInput{
@@ -46,9 +56,9 @@ div{
 #blankSelection{
     display: flex;
     border-radius: 50%;
-    background-color:ghostwhite;
-    width: 93px;
-    height: 93px;;
+    background-color:rgb(180, 180, 240);
+    width: 100px;
+    height: 100px;;
     justify-content: center;
     align-items: center;
 }
@@ -59,18 +69,23 @@ div{
 
 #pcSelection{
     width: 100px;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 #matchResult{
     display: flex;
     flex-direction: row;
+    height: 50px;
     justify-content: space-around;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 #afterGame{
     display: none;
     flex-direction: column;
-    height: 550px;
+    min-height: 550px;
     justify-content: center;
 }
 
@@ -89,14 +104,19 @@ div{
     font-weight: bold;
 }
 
-.footer, .header, #gamePlay, #afterGame, #matchResult{
+#gamePlay, #afterGame, #matchResult{
     max-width: 500px;
     min-width: 400px;
 }
 
 .footer, .header{
-    text-align: center;
+    display: flex;
+    flex-grow: 0;
+    align-self: stretch;
+    justify-content: center;
     font-size: 25px;
+    background-color:#64629c;
+    color: whitesmoke;
 }
 
 .msgFinal{
@@ -108,4 +128,18 @@ div{
 
 .footer{
     font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#vs{
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+h3{
+    justify-self: center;
+    text-align: center;
+    align-self: center;
 }
