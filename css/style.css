@@ -20,7 +20,7 @@ div{
 }
 
 #gamePlay{
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
@@ -62,13 +62,13 @@ div{
 }
 
 #matchResult{
-    display: none;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
 #afterGame{
-    display: flex;
+    display: none;
     flex-direction: column;
     height: 550px;
     justify-content: center;

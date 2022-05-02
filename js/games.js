@@ -62,13 +62,19 @@ function reMatch(){
     });
 }
 
-function finalMgs(user){
+function finalMgs(user, pc){
     let finalMessage = document.querySelector('.msgFinal');
+    let userPointsF = document.querySelector('#userPointsF');
+    let pcPointsF = document.querySelector('#PCpointsF');
 
     if(user == 5){
         finalMessage.textContent = 'USER WIN!';
+        userPointsF.textContent = user;
+        pcPointsF.textContent = pc;
     }else{
         finalMessage.textContent = 'PC WIN!'
+        userPointsF.textContent = user;
+        pcPointsF.textContent = pc;
     }
 }
 
@@ -86,10 +92,12 @@ function userInputButtons(){
         playRoundVar = playRound("rock", computerPlay());
         userPointsFunction += playRoundVar[0];
         PCPointsFunction += playRoundVar[1];
+
         userPoints.textContent = userPointsFunction;
         pcPoints.textContent = PCPointsFunction;
+
         if( userPointsFunction == 5 || PCPointsFunction == 5){
-            finalMgs(userPointsFunction);
+            finalMgs(userPointsFunction, PCPointsFunction);
             reMatch();
         }
     });
@@ -98,11 +106,12 @@ function userInputButtons(){
         playRoundVar = playRound("paper", computerPlay());
         userPointsFunction += playRoundVar[0];
         PCPointsFunction += playRoundVar[1];
+
         userPoints.textContent = userPointsFunction;
         pcPoints.textContent = PCPointsFunction;
 
         if( userPointsFunction == 5 || PCPointsFunction == 5){
-            finalMgs(userPointsFunction);
+            finalMgs(userPointsFunction, PCPointsFunction);
             reMatch();
         }
 
@@ -112,10 +121,12 @@ function userInputButtons(){
         playRoundVar = playRound("scissors", computerPlay());
         userPointsFunction += playRoundVar[0];
         PCPointsFunction += playRoundVar[1];
+
         userPoints.textContent = userPointsFunction;
         pcPoints.textContent = PCPointsFunction;
+
         if( userPointsFunction == 5 || PCPointsFunction == 5){
-            finalMgs(userPointsFunction);
+            finalMgs(userPointsFunction, PCPointsFunction);
             reMatch();
         }
     });
