@@ -1,3 +1,6 @@
+*{
+    font-family:'Shadows Into Light', cursive;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -76,10 +79,14 @@ div{
     flex-direction: row;
     justify-content: space-around;
     margin: 20px 40px;
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 #rematchButtonYes{
+    font-size: 25px;
     margin: 50px 40px;
+    font-weight: bold;
 }
 
 .footer, .header, #gamePlay, #afterGame, #matchResult{
@@ -89,10 +96,16 @@ div{
 
 .footer, .header{
     text-align: center;
+    font-size: 25px;
 }
 
 .msgFinal{
     text-align: center;
+    font-size: 40px;
     margin: 20px 40px;
+    font-weight: bolder;
 }
 
+.footer{
+    font-size: 20px;
+}

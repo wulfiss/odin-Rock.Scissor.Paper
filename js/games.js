@@ -62,6 +62,15 @@ function reMatch(){
     });
 }
 
+function finalMgs(user){
+    let finalMessage = document.querySelector('.msgFinal');
+
+    if(user == 5){
+        finalMessage.textContent = 'USER WIN!';
+    }else{
+        finalMessage.textContent = 'PC WIN!'
+    }
+}
 
 function userInputButtons(){
     const $rock = document.querySelector('#rock');
@@ -80,6 +89,7 @@ function userInputButtons(){
         userPoints.textContent = userPointsFunction;
         pcPoints.textContent = PCPointsFunction;
         if( userPointsFunction == 5 || PCPointsFunction == 5){
+            finalMgs(userPointsFunction);
             reMatch();
         }
     });
@@ -92,6 +102,7 @@ function userInputButtons(){
         pcPoints.textContent = PCPointsFunction;
 
         if( userPointsFunction == 5 || PCPointsFunction == 5){
+            finalMgs(userPointsFunction);
             reMatch();
         }
 
@@ -104,6 +115,7 @@ function userInputButtons(){
         userPoints.textContent = userPointsFunction;
         pcPoints.textContent = PCPointsFunction;
         if( userPointsFunction == 5 || PCPointsFunction == 5){
+            finalMgs(userPointsFunction);
             reMatch();
         }
     });
